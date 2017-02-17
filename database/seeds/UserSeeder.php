@@ -23,19 +23,20 @@ class UserSeeder extends Seeder
             $admin = new \App\User();
             $admin->name = 'Admin Admin';
             $admin->email = 'admin@admin.com';
+	    $admin->user_role = $sys_admin->id;
             $admin->password = bcrypt(123456);
-            $admin->phone_no = '700000000';
-            $admin->masterfile_id = $admin_mf->id;
+//            $admin->phone_no = '700000000';
+            $admin->mf_id = $admin_mf->id;
             $admin->save();
             $admin->roles()->attach($sys_admin);
 
-            $admin = new \App\User();
-            $admin->name = 'ICy';
-            $admin->email = 'alex@admin.com';
-            $admin->user_role = 3;
-            $admin->mf_id = 2;
-            $admin->password = bcrypt(123456);
-            $admin->save();
+//            $admin = new \App\User();
+//            $admin->name = 'ICy';
+//            $admin->email = 'alex@admin.com';
+//            $admin->user_role = 3;
+//            $admin->mf_id = 2;
+  //          $admin->password = bcrypt(123456);
+    //        $admin->save();
         });
     }
 }
