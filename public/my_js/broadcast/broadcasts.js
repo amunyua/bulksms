@@ -1,4 +1,5 @@
-var DT = $('#broadcasts').DataTable({
+alert('ok');
+var DT = $('#inbox-table').DataTable({
     serverSide: true,
     processing: true,
     "aaSorting": [[ 0, 'desc' ]],

@@ -11,7 +11,7 @@ return [
     | API, giving you convenient access to each back-end using the same
     | syntax for each one. Here you may set the default queue driver.
     |
-    | Supported: "sync", "database", "beanstalkd", "sqs", "redis", "null"
+    | Supported: "sync", "database", "beanstalk", "sqs", "redis", "null"
     |
     */
 
@@ -41,7 +41,7 @@ return [
             'retry_after' => 90,
         ],
 
-        'beanstalkd' => [
+        'beanstalk' => [
             'driver' => 'beanstalkd',
             'host' => 'localhost',
             'queue' => 'default',

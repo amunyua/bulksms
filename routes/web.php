@@ -156,3 +156,7 @@ Route::post('purchase-sms-client','SmsCreditController@purchaseSmsClient');
 #### broadcasts
 Route::get('broadcasts','BroadCastController@index');
 Route::get('load-broadcasts','BroadCastController@loadBroadcasts');
+Route::get('compose','BroadCastController@loadComposePage');
+Route::post('process-broadcast','BroadCastController@processBroadcast');
+Route::get('message-list','BroadCastController@messageList');
+

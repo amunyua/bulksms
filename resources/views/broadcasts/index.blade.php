@@ -1,106 +1,152 @@
-@extends('layouts.dt')
-@section('title', 'Broadcasts')
-@section('widget-title', 'Manage Broadcasts')
-@section('widget-desc', 'Broadcasts')
+@extends('layouts.sms-layout')
 
-@section('button')
-
-    <ul class="list-inline list-unstyled pull-right">
-        <li>
-            <a type="button" class="btn btn-primary pull-right header-btn " data-toggle="modal" data-target="#add-user-role">
-                <i class="fa fa-plus"></i> Send Broadcast
-
-            </a>
-        </li>
-        {{--<li>--}}
-        {{--<a data-toggle="modal" href="#edit-route" id="edit-masterfile-btn" class="btn btn-warning btn-sm header-btn  pull-right ">--}}
-        {{--<i class="fa fa-edit"></i> Edit Supplier--}}
-        {{--</a>--}}
-        {{--</li>--}}
-        {{--<li>--}}
-        {{--<a data-toggle="modal" href="#delete-supplier" id="edit-route-btn" class="btn btn-danger btn-sm header-btn pull-right ">--}}
-        {{--<i class="fa fa-edit"></i> Delete supplier--}}
-        {{--</a>--}}
-        {{--</li>--}}
-    </ul>
-@endsection
 
 @section('content')
-    @include('layouts.includes._messages')
-    <table id="broadcasts" class="table table-striped table-bordered table-hover" width="100%">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Recipients</th>
-            <th>Message</th>
-            <th>Client Group</th>
-            <th>Number of Recipients</th>
+    <div class="inbox-nav-bar no-content-padding">
 
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-@endsection
+        <h1 class="page-title txt-color-blueDark hidden-tablet"><i class="fa fa-fw fa-inbox"></i> Broadcasts &nbsp;
+            {{--<span class="btn-group">--}}
+							{{--<a href="#" data-toggle="dropdown" class="btn btn-default btn-xs dropdown-toggle"><span class="caret single"></span></a>--}}
+							{{--<ul class="dropdown-menu">--}}
+								{{--<li>--}}
+									{{--<a href="#">Action</a>--}}
+								{{--</li>--}}
+								{{--<li>--}}
+									{{--<a href="#">Another action</a>--}}
+								{{--</li>--}}
+								{{--<li>--}}
+									{{--<a href="#">Something else here</a>--}}
+								{{--</li>--}}
+								{{--<li class="divider"></li>--}}
+								{{--<li>--}}
+									{{--<a href="#">Separated link</a>--}}
+								{{--</li>--}}
+							{{--</ul>--}}
+						{{--</span>--}}
+        </h1>
 
-@section('modals')
-    <div class="modal fade" id="add-user-role" role="dialog" >
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title">
-                        Purchase Sms
-                    </h4>
-                </div>
-                <div class="modal-body no-padding">
+        <div class="btn-group hidden-desktop visible-tablet">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                Broadcasts <i class="fa fa-caret-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-left">
+                {{--<li>--}}
+                    {{--<a href="javascript:void(0);" class="inbox-load">Inbox <i class="fa fa-check"></i></a>--}}
+                {{--</li>--}}
+                <li>
+                    <a href="javascript:void(0);" class="inbox-load">Sent <i class="fa fa-check"></i></a>
+                </li>
+                {{--<li>--}}
+                    {{--<a href="javascript:void(0);">Trash</a>--}}
+                {{--</li>--}}
+                {{--<li class="divider"></li>--}}
+                {{--<li>--}}
+                    {{--<a href="javascript:void(0);">Spam</a>--}}
+                {{--</li>--}}
+            </ul>
 
-                    <form id="add-menu-form" class="smart-form" action="{{ url('update-master-sms') }}" method="post">
-                        {{ csrf_field() }}
-                        <fieldset>
-                            <section>
-                                <div class="row">
-                                    <label class="label col col-2">Send To</label>
-                                    <div class="col col-10">
-                                       <select name="client_group" class="form-control select2">
-                                           <option value=""> -- Select recipients --</option>
-                                       </select>
-                                    </div>
-                                </div>
-                            </section>
-                            <section>
-                                <div class="row">
-                                    <label class="label col col-2">Quantity</label>
-                                    <div class="col col-10">
-                                        <label class="input"> <i class="icon-append fa fa-keyboard-o"></i>
-                                            <input type="number"  name="number_of_sms" autocomplete="off">
-                                        </label>
-                                    </div>
-                                </div>
-                            </section>
-                        </fieldset>
+        </div>
 
-                        <footer>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fa fa-save"></i> Save
-                            </button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                <i class="fa fa-remove"></i> Cancel
-                            </button>
+        <div class="inbox-checkbox-triggered">
 
-                        </footer>
-                    </form>
+            <div class="btn-group">
+                {{--<a href="javascript:void(0);" rel="tooltip" title="" data-placement="bottom" data-original-title="Mark Important" class="btn btn-default"><strong><i class="fa fa-exclamation fa-lg text-danger"></i></strong></a>--}}
+                {{--<a href="javascript:void(0);" rel="tooltip" title="" data-placement="bottom" data-original-title="Move to folder" class="btn btn-default"><strong><i class="fa fa-folder-open fa-lg"></i></strong></a>--}}
+                {{--<a href="javascript:void(0);" rel="tooltip" title="" data-placement="bottom" data-original-title="Delete" class="deletebutton btn btn-default"><strong><i class="fa fa-trash-o fa-lg"></i></strong></a>--}}
+            </div>
 
+        </div>
 
-                </div>
+        <a href="javascript:void(0);" id="compose-mail-mini" class="btn btn-primary hidden-desktop visible-tablet"> <strong><i class="fa fa-file fa-lg"></i></strong> Create new </a>
+        {{--<a href="javascript:void(0);" id="compose-mail" class="btn btn-primary btn-block"> <strong>Compose</strong> </a>--}}
 
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
+        <div class="btn-group pull-right inbox-paging">
+            {{--<a href="javascript:void(0);" class="btn btn-default btn-sm"><strong><i class="fa fa-chevron-left"></i></strong></a>--}}
+            {{--<a href="javascript:void(0);" class="btn btn-default btn-sm"><strong><i class="fa fa-chevron-right"></i></strong></a>--}}
+            <?php $sms = \App\SmsCredit::where('mf_id',\Illuminate\Support\Facades\Auth::user()->mf_id)->get();
+            if(count($sms)){
+            foreach ($sms as $s){
+            ?>
+            <strong><?php echo $s->remaining_sms?></strong> Credits Remaining
+            <?php
+            }}
+            ?>
+        </div>
+
     </div>
-@endsection
+    @include('layouts.includes._messages')
+    <div id="inbox-content" class="inbox-body no-content-padding">
 
-@push('js')
-<script src="{{ URL::asset('my_js/broadcast/broadcasts.js') }}"></script>
-@endpush
+        <div class="inbox-side-bar">
+
+            <a href="javascript:void(0);" id="compose-mail" class="btn btn-primary btn-block"> <strong>Compose</strong> </a>
+
+            <h6> Folder <a href="javascript:void(0);" rel="tooltip" title="" data-placement="right" data-original-title="Refresh" class="pull-right txt-color-darken"><i class="fa fa-refresh fa-spin"></i></a></h6>
+
+            <ul class="inbox-menu-lg">
+                <li class="active">
+                    <a class="inbox-load" href="javascript:void(0);"> Sent Broadcasts </a>
+                </li>
+                {{--<li>--}}
+                    {{--<a href="javascript:void(0);">Sent</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="javascript:void(0);">Draft</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="javascript:void(0);">Trash</a>--}}
+                {{--</li>--}}
+            </ul>
+
+            {{--<h6> Quick Access <a href="javascript:void(0);" rel="tooltip" title="" data-placement="right" data-original-title="Add Another" class="pull-right txt-color-darken"><i class="fa fa-plus"></i></a></h6>--}}
+
+            {{--<ul class="inbox-menu-sm">--}}
+                {{--<li>--}}
+                    {{--<a href="javascript:void(0);"> Images (476)</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="javascript:void(0);">Documents (4)</a>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
+
+            <div class="air air-bottom inbox-space">
+
+
+            </div>
+
+        </div>
+
+        <div class="table-wrap custom-scroll animated slow fadeInRight">
+            <!-- ajax will fill this area -->
+            LOADING...
+
+        </div>
+
+        <div class="inbox-footer">
+
+            <div class="row">
+
+                <div class="col-xs-6 col-sm-1">
+
+                    <div class="txt-color-white hidden-desktop visible-mobile">
+                        {{--3.5GB of <strong>10GB</strong>--}}
+
+                        <div class="progress progress-micro">
+                            <div class="progress-bar progress-primary" style="width: 34%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-11 text-right">
+                    <div class="txt-color-white inline-block">
+                        <i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> 52 mins ago |</i> Displaying <strong>44 of 259</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    @endsection

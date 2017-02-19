@@ -25,7 +25,7 @@ class CreateCustomerMessagesTable extends Migration
             $table->boolean('isDelivered')->default(false);
             $table->dateTime('sentAt')->nullable();
             $table->dateTime('deliveredAt')->nullable();
-            $table->integer('sentTo')->nullable();
+            $table->integer('client_id')->nullable();
             $table->timestamps();
         });
     }

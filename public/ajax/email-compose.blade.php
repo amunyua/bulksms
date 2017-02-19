@@ -1,23 +1,24 @@
 <h2 class="email-open-header">
-	Compose New Email <span class="label txt-color-white">DRAFT</span>
-	<a href="javascript:void(0);" rel="tooltip" data-placement="left" data-original-title="Print" class="txt-color-darken pull-right"><i class="fa fa-print"></i></a>	
+	Compose New Broadcast
+	<!--<span class="label txt-color-white">DRAFT</span>-->
+	<!--<a href="javascript:void(0);" rel="tooltip" data-placement="left" data-original-title="Print" class="txt-color-darken pull-right"><i class="fa fa-print"></i></a>	-->
 </h2>
 
-<form enctype="multipart/form-data" action="dummy.php" method="POST" class="form-horizontal" id="email-compose-form">
+<form action="dummy.php" method="POST" class="form-horizontal" id="email-compose-form">
 
 	<div class="inbox-info-bar no-padding">
 		<div class="row">
 			<div class="form-group">
 				<label class="control-label col-md-1"><strong>To</strong></label>
 				<div class="col-md-11">
-					<select multiple style="width:100%" class="select2" data-select-search="true">
-						<option value="sunny.orlaf@smartadmin.com">sadi.orlaf@smartadmin.com</option>
-						<option value="rachael.hawi@smartadmin.com">rachael.hawi@smartadmin.com</option>
-						<option value="michael.safiel@smartadmin.com">michael.safiel@smartadmin.com</option>
-						<option value="alex.jones@infowars.com">alex.jones@infowars.com</option>
-						<option value="oruf.matalla@gmail.com">oruf.matalla@gmail.com</option>
-						<option value="hr@smartadmin.com">hr@smartadmin.com</option>
-						<option value="IT@smartadmin.com" selected="selected">IT@smartadmin.com</option>
+					<select multiple style="width:100%" class="select2">
+						<option value="All">Send to all</option>
+						@if(count($client_groups))
+							@foreach($client_groups as $client_group)
+								<option value="{{$client_group->id}}">{{$client_group->group_name}}</option>
+								@endforeach
+							@endif
+
 					</select>
 					<em><a href="javascript:void(0);" class="show-next" rel="tooltip" data-placement="bottom" data-original-title="Carbon Copy">CC</a></em>
 				</div>
@@ -25,7 +26,7 @@
 		</div>	
 	</div>
 	
-	<div class="inbox-info-bar no-padding hidden">
+	<div class="inbox-info-bar no-padding ">
 		<div class="row">
 			<div class="form-group">
 				<label class="control-label col-md-1"><strong>CC</strong></label>

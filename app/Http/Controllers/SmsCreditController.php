@@ -118,12 +118,5 @@ class SmsCreditController extends Controller
         Session::flash('error','Encountered an error');
         return redirect('sms-credits');
     }
-    public function sendSms(){
-        echo 'here';
-        $member = '254715862938';
-        $message = 'This is a test message that will be queued';
-        $job = (new SendSMS($member, $message))->delay(60);
-        $this->dispatch($job);
 
-    }
 }

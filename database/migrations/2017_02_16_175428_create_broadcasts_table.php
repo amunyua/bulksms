@@ -22,7 +22,6 @@ class CreateBroadcastsTable extends Migration
                 ->on('masterfiles')
                 ->onUpdate('cascade');
             $table->string('recipients');
-            $table->integer('client_group')->nallable();
             $table->integer('recipient_count')->nullable();
             $table->double('estimated_cost')->nullable();
             $table->timestamps();

@@ -539,6 +539,7 @@ class ComposerStaticInitd975b01357ccd5aedf89783ba049d694
     );
 
     public static $classMap = array (
+        'AddColumsToBroadcasts' => __DIR__ . '/../..' . '/database/migrations/2017_02_18_181807_AddColumsToBroadcasts.php',
         'AddFaIconsTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_12_085709_add_fa_icons_table.php',
         'AddFaiconColumn' => __DIR__ . '/../..' . '/database/migrations/2016_11_5_093918_add_faicon_column.php',
         'AddFkToUserstable' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_075012_add_fk_to_userstable.php',
