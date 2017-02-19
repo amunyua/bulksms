@@ -18,6 +18,15 @@
             </div>
         </div>
     </div>
+
+    <div class="col-sm-6">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
+                <input class="form-control" placeholder="Alpha Numeric" type="text" autocomplete="off" name="alpha_numeric" id="fname" value="{{ old('alpha_numeric') }}">
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row person">

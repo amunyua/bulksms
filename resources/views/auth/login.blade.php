@@ -1,5 +1,5 @@
 @extends('layouts.login')
-@section('title', 'Natural Tours & Safaris')
+@section('title', 'SmartSmsApp')
 {{--@section('system_name', 'Ma3Smart')--}}
 
 @section('content')
@@ -39,7 +39,7 @@
                 {{ csrf_field() }}
 
                 <header>
-                    <h3 style="text-align: center">Natural Tours & Safaris</h3>
+                    <h3 style="text-align: center">Smart Sms App</h3>
                     <h4  style="text-align: center">Sign In</h4>
                 </header>
 
@@ -58,7 +58,7 @@
                             <input type="password" name="password">
                             <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b> </label>
                         <div class="note">
-                            <a href="forgotpassword.html">Forgot password?</a>
+                            {{--<a href="forgotpassword.html">Forgot password?</a>--}}
                         </div>
                     </section>
 

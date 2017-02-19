@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddAlphanumericfieldtomasterfiles' => $baseDir . '/database/migrations/2017_02_19_170213_add-alphanumericfieldtomasterfiles.php',
+    'AddAphanumerictouserstable' => $baseDir . '/database/migrations/2017_02_19_172859_add_aphanumerictouserstable.php',
     'AddColumsToBroadcasts' => $baseDir . '/database/migrations/2017_02_18_181807_AddColumsToBroadcasts.php',
     'AddFaIconsTable' => $baseDir . '/database/migrations/2016_10_12_085709_add_fa_icons_table.php',
     'AddFaiconColumn' => $baseDir . '/database/migrations/2016_11_5_093918_add_faicon_column.php',
@@ -15,6 +17,7 @@ return array(
     'AddStatusToSmsCredits' => $baseDir . '/database/migrations/2017_02_14_060813_add_statusToSmsCredits.php',
     'AddUserRoleColumnInUsersT' => $baseDir . '/database/migrations/2016_11_06_164649_addUserRoleColumnInUsersT.php',
     'Addcolumnstoexpenses' => $baseDir . '/database/migrations/2016_11_03_185419_addcolumnstoexpenses.php',
+    'Addtimestamps' => $baseDir . '/database/migrations/2017_02_19_181311_addtimestamps.php',
     'AllUsers' => $baseDir . '/database/migrations/2016_12_07_104829_all_users.php',
     'Cpdf' => $vendorDir . '/dompdf/dompdf/lib/Cpdf.php',
     'CreateAllMasterfileView' => $baseDir . '/database/migrations/2016_11_07_122709_create_all_masterfile_view.php',

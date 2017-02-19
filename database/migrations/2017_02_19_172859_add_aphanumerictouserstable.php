@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkToUserstable extends Migration
+class AddAphanumerictouserstable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,7 @@ class AddFkToUserstable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('mf_id')->unsigned()->index()->nullable();
-            $table->foreign('mf_id')
-                ->references('id')
-                ->on('masterfiles')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->string('alpha_numeric')->nullable();
         });
     }
 

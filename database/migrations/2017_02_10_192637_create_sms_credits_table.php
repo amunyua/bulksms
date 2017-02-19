@@ -19,7 +19,8 @@ class CreateSmsCreditsTable extends Migration
             $table->foreign('mf_id')
                 ->references('id')
                 ->on('masterfiles')
-                ->onUpdate('cascade');
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->integer('initial_sms');
             $table->integer('remaining_sms');
             $table->timestamps();

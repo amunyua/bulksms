@@ -539,6 +539,8 @@ class ComposerStaticInitd975b01357ccd5aedf89783ba049d694
     );
 
     public static $classMap = array (
+        'AddAlphanumericfieldtomasterfiles' => __DIR__ . '/../..' . '/database/migrations/2017_02_19_170213_add-alphanumericfieldtomasterfiles.php',
+        'AddAphanumerictouserstable' => __DIR__ . '/../..' . '/database/migrations/2017_02_19_172859_add_aphanumerictouserstable.php',
         'AddColumsToBroadcasts' => __DIR__ . '/../..' . '/database/migrations/2017_02_18_181807_AddColumsToBroadcasts.php',
         'AddFaIconsTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_12_085709_add_fa_icons_table.php',
         'AddFaiconColumn' => __DIR__ . '/../..' . '/database/migrations/2016_11_5_093918_add_faicon_column.php',
@@ -548,6 +550,7 @@ class ComposerStaticInitd975b01357ccd5aedf89783ba049d694
         'AddStatusToSmsCredits' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_060813_add_statusToSmsCredits.php',
         'AddUserRoleColumnInUsersT' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_164649_addUserRoleColumnInUsersT.php',
         'Addcolumnstoexpenses' => __DIR__ . '/../..' . '/database/migrations/2016_11_03_185419_addcolumnstoexpenses.php',
+        'Addtimestamps' => __DIR__ . '/../..' . '/database/migrations/2017_02_19_181311_addtimestamps.php',
         'AllUsers' => __DIR__ . '/../..' . '/database/migrations/2016_12_07_104829_all_users.php',
         'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
         'CreateAllMasterfileView' => __DIR__ . '/../..' . '/database/migrations/2016_11_07_122709_create_all_masterfile_view.php',

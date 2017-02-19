@@ -45,8 +45,9 @@ class MasterfileController extends Controller
             'firstname' => 'required',
             'surname' => 'required',
             'gender' => 'required',
-//            'phone_number'=>'required',
-//            'email'=>'required|unique:contacts,email'
+            'phone_number'=>'required',
+            'email'=>'required|unique:contacts,email',
+            'alpha_numeric'=>'required'
 //            'regdate' => 'required'
         );
         $this->validate($request, $rules);
@@ -55,11 +56,7 @@ class MasterfileController extends Controller
 //            $role = Role::where('role_code', Input::get('role'))->first();
 
             // create registration
-            if(!empty(Input::get('depends_on'))){
-                $depends_on = Input::get('depends_on');
-            }else{
-                $depends_on = 0;
-            }
+
             if(Input::get('role') != 'Staff'){
                 $b_role = Input::get('role');
             }else{
@@ -72,8 +69,7 @@ class MasterfileController extends Controller
                 $reg->id_no = Input::get('id_no');
                 $reg->user_role = Input::get('role');
                 $reg->b_role = $b_role;
-                $reg->depends_on = $depends_on;
-
+                $reg->alpha_numeric = strtoupper(Input::get('alpha_numeric'));
                 $reg->save();
                 $reg_id = $reg->id;
 
@@ -94,26 +90,25 @@ class MasterfileController extends Controller
                 $sms_credits->remaining_sms = 0;
                 $sms_credits->save();
 
-            $role = Role::where('role_name','Client')->first();
-            if(Input::get('role')== $role->role_name) {
 
                 // create user login account
-                $password = bcrypt(123456);
+                $password = bcrypt('test123');
                 $login = new User();
                 $login->mf_id = $reg_id;
                 $login->email =Input::get('email');
                 $login->name = Input::get('surname').' '.Input::get('firstname');
                 $login->password = $password;
                 $login->status = 1;
-                $login->user_role = $role->id;
+                $login->user_role = Input::get('role');
+                $login->alpha_numeric = strtoupper(Input::get('alpha_numeric'));
                 $login->save();
                 $user_id = $login->id;
 
                 $role_user = new RoleUser();
-                $role_user->role_id = $role->id;
+                $role_user->role_id = Input::get('role');   
                 $role_user->user_id = $user_id;
                 $role_user->save();
-            }
+
             Session::flash('success','The masterFile has been created');
         });
         return redirect('all-masterfiles');

@@ -155,6 +155,9 @@ class BroadCastController extends Controller
                 $this->dispatch(new SendSMS($client_pnumber,$message_body,$from));
                 Log::info('dispached');
                 $count--;
+                if($count == 0){
+                    break;
+                }
                 Log::info($count);
             }
         }

@@ -65,17 +65,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="inbox-info-bar no-padding">
-		<div class="row">
-			<div class="form-group">
-				<label class="control-label col-md-2"><strong>Subject</strong></label>
-				<div class="col-md-10">
-					<input class="form-control" placeholder="Broadcast Subject" name="subject" type="text">
-					{{--<em><a href="javascript:void(0);" class="show-next" rel="tooltip" data-placement="bottom" data-original-title="Attachments"><i class="fa fa-paperclip fa-lg"></i></a></em>--}}
-				</div>
-			</div>
-		</div>	
-	</div>
 	<div class="chat-footer">
 
 		<!-- CHAT TEXTAREA -->

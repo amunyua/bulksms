@@ -15,6 +15,11 @@ use Yajra\Datatables\Datatables;
 
 class SmsCreditController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
         $sms = SmsCredit::all();
         return view('SmsCredits.smscredits',array(
@@ -39,9 +44,11 @@ class SmsCreditController extends Controller
         $this->validate($request,$validate);
 
         DB::transaction(function (){
-            $available = Sms::first()->bundle;
-            if($available != null){
-                $new_number = $available + Input::get('number_of_sms');
+            $available = Sms::all();
+            if(count($available)){
+                $a = $available[0];
+                $new_numberz = $a->bundle + Input::get('number_of_sms');
+                $new_number = $new_numberz;
             }else{
                 $new_number = Input::get('number_of_sms');
             }
