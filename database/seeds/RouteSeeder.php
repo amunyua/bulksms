@@ -329,6 +329,14 @@ class RouteSeeder extends Seeder
             $client_route->save();
             $client_route->roles()->attach($admin);
 
+            //all client groups
+            $client_route = new Route();
+            $client_route->route_name = 'Client Groups';
+            $client_route->url = 'client-groups';
+            $client_route->parent_route = $client_route_id;
+            $client_route->save();
+            $client_route->roles()->attach($admin);
+
             #### sms credits module
             $Sms_cred = new Route();
             $Sms_cred->route_name = 'Sms Module';

@@ -9,6 +9,7 @@ return array(
     'AddAlphanumericfieldtomasterfiles' => $baseDir . '/database/migrations/2017_02_19_170213_add-alphanumericfieldtomasterfiles.php',
     'AddAphanumerictouserstable' => $baseDir . '/database/migrations/2017_02_19_172859_add_aphanumerictouserstable.php',
     'AddColumsToBroadcasts' => $baseDir . '/database/migrations/2017_02_18_181807_AddColumsToBroadcasts.php',
+    'AddCreatedByColumn' => $baseDir . '/database/migrations/2017_02_19_200250_Add_created_by_column.php',
     'AddFaIconsTable' => $baseDir . '/database/migrations/2016_10_12_085709_add_fa_icons_table.php',
     'AddFaiconColumn' => $baseDir . '/database/migrations/2016_11_5_093918_add_faicon_column.php',
     'AddFkToUserstable' => $baseDir . '/database/migrations/2016_11_06_075012_add_fk_to_userstable.php',

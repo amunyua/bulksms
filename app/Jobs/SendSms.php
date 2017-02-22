@@ -46,9 +46,7 @@ class SendSms implements ShouldQueue
 //            $requestBody->setText("hello");
 
 
-        $response = $client->execute($requestBody);
+//        $response = $client->execute($requestBody);
 
-//        Log::info($response);
-//            var_dump($response);die;
     }
 }

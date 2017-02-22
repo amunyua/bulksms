@@ -5,7 +5,6 @@
 <th>ID</th>
 <th>Recipients</th>
 <th>Message</th>
-<th>Client Group</th>
 <th>Number of Recipients</th>
 
 </tr>
@@ -71,7 +70,6 @@
             { data: 'id', name: 'id'},
             { data: 'recipients', name: 'recipients'},
             { data: 'message_body', name: 'message_body'},
-            { data: 'client_group', name: 'client_group'},
             { data: 'recipient_count', name: 'recipient_count'}
         ]
     });

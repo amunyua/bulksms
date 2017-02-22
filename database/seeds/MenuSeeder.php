@@ -137,6 +137,14 @@ class MenuSeeder extends Seeder
             $client_id->parent_menu = $client_id_n;
             $client_id->save();
 
+            //client groups
+            $client = Route::where('route_name', 'Client Groups')->first();
+            $client_id = new Menu();
+            $client_id->route_id = $client->id;
+            $client_id->sequence = 2;
+            $client_id->parent_menu = $client_id_n;
+            $client_id->save();
+
             #### sms credits
             $sms_module = Route::where('route_name', 'Sms Module')->first();
             $sms_menu = new Menu();

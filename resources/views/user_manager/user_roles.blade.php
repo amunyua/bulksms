@@ -6,12 +6,12 @@
 @section('button')
     <ul class="list-inline pull-right">
         <li>
-            <button class="btn btn-primary btn-sm header-btn hidden-mobile" data-toggle="modal" data-target="#add-user-role">
+            <button class="btn btn-primary btn-sm header-btn " data-toggle="modal" data-target="#add-user-role">
                 <i class="fa fa-plus"></i> Add User Role
             </button>
         </li>
         <li>
-            <button class="btn btn-info btn-sm header-btn hidden-mobile" id="allocate-routes-view"  data-target="#allocate-routes">
+            <button class="btn btn-info btn-sm header-btn " id="allocate-routes-view"  data-target="#allocate-routes">
                 <i class="fa fa-paperclip"></i> Allocate Routes
             </button>
         </li>

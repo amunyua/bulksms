@@ -111,9 +111,9 @@ class BroadCastController extends Controller
                     Session::flash('failed','Sorry, You don\'t have sufficient credits to send sms\' s, your current balance is (0) please contact Alex (0715862938) ' );
                     return false;
                 }
-
-                if($credits[0]->remainig_sms < $message_count){
-                    $credit_message = " Although Some messages were not sent due to lack of sufficient credits. You chose to send to ( ".$message_count." )recipients while you have ( ".$credits[0]->remaining_sms." ) credits remaining. Please contact Alex (0715 862 938)";
+//                var_dump( $credits[0]->remaining_sms);die;
+                if($credits[0]->remaining_sms < $message_count){
+                    $credit_message = " Although Some messages were not sent due to lack of sufficient credits. You chose to send to ( ".$message_count." ) recipients while you had ( ".$credits[0]->remaining_sms." ) credits remaining. Please contact Alex (0715 862 938)";
                 }else{
                     $credit_message = '';
                 }
@@ -140,8 +140,8 @@ class BroadCastController extends Controller
                 $customer_message->isDelivered = false;
                 $customer_message->client_id = $customer;
                 $customer_message->save();
-                $this->sendMessage($customer_to_message,Input::get('message_body'),'VoomSms',$message_count,$credits[0]->remaining_sms);
             }
+            $this->sendMessage($customer_to_message,Input::get('message_body'),'VoomSms',$message_count,$credits[0]->remaining_sms);
             Session::flash('success','The broadcast Has been sent'.$credit_message);
         });
         return redirect('broadcasts');
@@ -151,15 +151,13 @@ class BroadCastController extends Controller
         $count = $remaining_sms;
         foreach($customer_to_message as $customer){
             $client_pnumber = Client::find($customer)->phone_number;
-            if($count != 0){
+            if($count > 0 == true){
+
                 $this->dispatch(new SendSMS($client_pnumber,$message_body,$from));
-                Log::info('dispached');
-                $count--;
-                if($count == 0){
-                    break;
-                }
-                Log::info($count);
+                Log::info('dispatched');
+                $count = $count - 1;
             }
+
         }
 //        echo $count;
         $sms_credits = SmsCredit::where('mf_id',$this->user->user()->mf_id)->first();

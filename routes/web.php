@@ -136,14 +136,17 @@ Route::post('/store-booking','BookingsController@createBooking');
 Route::get('/all-bookings','BookingsController@allBookings');
 Route::get('/view-booking/{id}','BookingsController@viewBookingDetails');
 
-#### reports
+####
 
 
 
 #### Clients
 Route::get('/all-recipients','ClientController@Index');
 Route::post('/store-client','ClientController@storeClient');
+Route::post('/store-client-group','ClientController@storeClientGroup');
 Route::get('/load-all-clients','ClientController@getClients');
+Route::get('/load-all-client-groups','ClientController@getClientGroups');
+Route::get('client-groups','ClientController@getGroups');
 
 #### sms credits
 Route::get('sms-credits','SmsCreditController@index');
