@@ -567,6 +567,7 @@ class ComposerStaticInitd975b01357ccd5aedf89783ba049d694
         'CreateDailyTransactionsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_03_172512_create_daily_transactions_table.php',
         'CreateExpensesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_02_191731_create_expenses_table.php',
         'CreateFailedJobsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_135818_create_failed_jobs_table.php',
+        'CreateInfobipDetailsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_11_074058_create_infobip_details_table.php',
         'CreateJobsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_135650_create_jobs_table.php',
         'CreateJournalsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_11_083346_create_journals_table.php',
         'CreateMasterfileTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_01_092857_create_masterfile_table.php',

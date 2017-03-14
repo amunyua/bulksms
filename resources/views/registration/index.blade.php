@@ -58,9 +58,9 @@
                                     <li data-target="#step2">
                                         <a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Contact Details</span> </a>
                                     </li>
-                                    {{--<li data-target="#step3">--}}
-                                        {{--<a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Other Details</span> </a>--}}
-                                    {{--</li>--}}
+                                    <li data-target="#step3">
+                                        <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Infobip Details</span> </a>
+                                    </li>
                                     <li data-target="#step4">
                                         <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Save Form</span> </a>
                                     </li>
@@ -77,9 +77,9 @@
                                 <div class="tab-pane" id="tab2">
                                     @include('registration.contact_details')
                                 </div>
-                                {{--<div class="tab-pane" id="tab3">--}}
-                                    {{--@include('registration.others')--}}
-                                {{--</div>--}}
+                                <div class="tab-pane" id="tab3">
+                                    @include('registration.infobip_details')
+                                </div>
                                 <div class="tab-pane" id="tab3">
                                     <br>
                                     <h3><strong>Step 3</strong> - Save Form</h3>

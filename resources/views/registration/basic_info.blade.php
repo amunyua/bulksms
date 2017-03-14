@@ -92,14 +92,12 @@
 </div>
 <div class="row" >
 
+
     <div class="col-sm-6">
-        <div class="form-group" id="b_role" style="display: none">
+        <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                <select name="business_role" class="form-control" id="role">
-                    <option value="">Choose Business Role</option>
-                    <option value="driver">Driver</option>
-                </select>
+                <input class="form-control" placeholder="Password" type="text" autocomplete="off" name="password" id="mname" value="{{ old('password') }}">
             </div>
         </div>
     </div>

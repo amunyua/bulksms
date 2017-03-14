@@ -6,6 +6,7 @@ use App\Broadcast;
 use App\Client;
 use App\ClientGroup;
 use App\CustomerMessage;
+use App\InfobipDetail;
 use App\SmsCredit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -149,13 +150,20 @@ class BroadCastController extends Controller
 
     public function sendMessage($customer_to_message, $message_body, $from, $message_count, $remaining_sms){
         $count = $remaining_sms;
+        //get infobip details
+        $infobip_details = InfobipDetail::where('mf_id',$this->user->user()->mf_id)->first();
+        if($infobip_details != NULL){
+
+          Log::info($infobip_details);
+
+
         foreach($customer_to_message as $customer){
             $client_pnumber = Client::find($customer)->phone_number;
             if($count > 0 == true){
 
-                $this->dispatch(new SendSMS($client_pnumber,$message_body,$from));
-                Log::info('dispatched');
-                $count = $count - 1;
+                $this->dispatch(new SendSMS($client_pnumber,$message_body,$infobip_details->alpha_numeric,$infobip_details->username,$infobip_details->password));
+//                Log::info($client_pnumber);
+                $count = $count - $infobip_details->rate;
             }
 
         }
@@ -165,7 +173,7 @@ class BroadCastController extends Controller
         $sms_credits_u->remaining_sms = $count;
         $sms_credits_u->save();
 //         die;
-
+        }
     }
 
     public function messageList(){

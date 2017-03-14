@@ -75,7 +75,7 @@
                                     <label class="label col col-2">Phone Number</label>
                                     <div class="col col-10">
                                         <label class="input"> <i class="icon-append fa fa-keyboard-o"></i>
-                                            <input type="number" required  name="phone_number" autocomplete="off">
+                                            <input type="number" required placeholder="start with 254..." name="phone_number" autocomplete="off">
                                         </label>
                                     </div>
                                 </div>

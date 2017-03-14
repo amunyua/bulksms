@@ -34,6 +34,7 @@ return array(
     'CreateDailyTransactionsTable' => $baseDir . '/database/migrations/2016_11_03_172512_create_daily_transactions_table.php',
     'CreateExpensesTable' => $baseDir . '/database/migrations/2016_11_02_191731_create_expenses_table.php',
     'CreateFailedJobsTable' => $baseDir . '/database/migrations/2017_02_15_135818_create_failed_jobs_table.php',
+    'CreateInfobipDetailsTable' => $baseDir . '/database/migrations/2017_03_11_074058_create_infobip_details_table.php',
     'CreateJobsTable' => $baseDir . '/database/migrations/2017_02_15_135650_create_jobs_table.php',
     'CreateJournalsTable' => $baseDir . '/database/migrations/2017_02_11_083346_create_journals_table.php',
     'CreateMasterfileTable' => $baseDir . '/database/migrations/2016_11_01_092857_create_masterfile_table.php',

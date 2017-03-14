@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use App\ContactTypes;
 use App\County;
+use App\InfobipDetail;
 use App\Masterfile;
 use App\Role;
 use App\Form;
@@ -90,9 +91,18 @@ class MasterfileController extends Controller
                 $sms_credits->remaining_sms = 0;
                 $sms_credits->save();
 
+                //create infobip details
+                $infobib = new InfobipDetail();
+                $infobib->mf_id = $reg_id;
+                $infobib->username = Input::get('info_username');
+                $infobib->password = Input::get('info_password');
+                $infobib->rate = Input::get('info_rate');
+                $infobib->alpha_numeric = strtoupper(Input::get('alpha_numeric'));
+                $infobib->save();
+
 
                 // create user login account
-                $password = bcrypt('test123');
+                $password = bcrypt(Input::get('password'));
                 $login = new User();
                 $login->mf_id = $reg_id;
                 $login->email =Input::get('email');
