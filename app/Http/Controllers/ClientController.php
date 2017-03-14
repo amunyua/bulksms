@@ -64,7 +64,11 @@ class ClientController extends Controller
         if($this->user->getUserRole() != 'SYS_ADMIN') {
             return Datatables::of(Client::where('created_by', $this->user()->mf_id)->get())->make(true);
         }else{
-            return Datatables::of($clients)->make(true);
+            return Datatables::of($clients)
+//              ->editColumn('Contact',function (){
+//
+//              })
+              ->make(true);
         }
     }
 

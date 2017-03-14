@@ -1,14 +1,14 @@
 @extends('layouts.dt')
-@section('title', 'Recipient')
-@section('widget-title', 'Manage Recipients')
-@section('widget-desc', 'All Recipients')
+@section('title', 'Contacts')
+@section('widget-title', 'Manage Contacts')
+@section('widget-desc', 'All Contacts')
 
 @section('button')
 
     <ul class="list-inline list-unstyled pull-right">
         <li>
             <a type="button" class="btn btn-primary pull-right header-btn " data-toggle="modal" data-target="#add-user-role">
-                <i class="fa fa-plus"></i> Add Recipient
+                <i class="fa fa-plus"></i> Create Contact
             </a>
         </li>
         {{--<li>--}}
@@ -32,7 +32,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Phone Number</th>
-            <th>Client group</th>
+            <th>Contact group</th>
             <th>Status</th>
 
         </tr>
@@ -51,7 +51,7 @@
                         &times;
                     </button>
                     <h4 class="modal-title">
-                        Add Recipient
+                        Create Contact
                     </h4>
                 </div>
                 <div class="modal-body no-padding">
@@ -83,11 +83,11 @@
 
                             <section>
                                 <div class="row">
-                                    <label class="label col col-2">Client Group</label>
+                                    <label class="label col col-2">Contact Group</label>
                                     <div class="col col-10">
 
                                            <select name="client_group"  required class="form-control">
-                                               <option value="">--Select client group--</option>
+                                               <option value="">--Select Contact group--</option>
                                                @if(count($client_groups))
                                                    @foreach($client_groups as $client_group)
                                                        <option value="{{ $client_group->id }}">{{ $client_group->group_name }}</option>

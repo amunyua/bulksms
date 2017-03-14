@@ -317,13 +317,13 @@ class RouteSeeder extends Seeder
 
             #### client Routes
             $client_route = new Route();
-            $client_route->route_name = 'Clients Module';
+            $client_route->route_name = 'Contacts';
             $client_route->save();
             $client_route_id = $client_route->id;
 
             //all client routes
             $client_route = new Route();
-            $client_route->route_name = 'All Clients';
+            $client_route->route_name = 'Manage Contacts';
             $client_route->url = 'all-recipients';
             $client_route->parent_route = $client_route_id;
             $client_route->save();
@@ -331,7 +331,7 @@ class RouteSeeder extends Seeder
 
             //all client groups
             $client_route = new Route();
-            $client_route->route_name = 'Client Groups';
+            $client_route->route_name = 'Contact Groups';
             $client_route->url = 'client-groups';
             $client_route->parent_route = $client_route_id;
             $client_route->save();

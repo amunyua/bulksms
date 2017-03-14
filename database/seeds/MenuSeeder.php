@@ -122,7 +122,7 @@ class MenuSeeder extends Seeder
             $backup->save();
 
             ##### client module
-            $client = Route::where('route_name', 'Clients Module')->first();
+            $client = Route::where('route_name', 'Contacts')->first();
             $client_id = new Menu();
             $client_id->route_id = $client->id;
             $client_id->sequence = 3;
@@ -130,18 +130,18 @@ class MenuSeeder extends Seeder
             $client_id->save();
             $client_id_n = $client_id->id;
 
-            $client = Route::where('route_name', 'All Clients')->first();
+            $client = Route::where('route_name', 'Manage Contacts')->first();
             $client_id = new Menu();
             $client_id->route_id = $client->id;
-            $client_id->sequence = 1;
+            $client_id->sequence = 2;
             $client_id->parent_menu = $client_id_n;
             $client_id->save();
 
             //client groups
-            $client = Route::where('route_name', 'Client Groups')->first();
+            $client = Route::where('route_name', 'Contact Groups')->first();
             $client_id = new Menu();
             $client_id->route_id = $client->id;
-            $client_id->sequence = 2;
+            $client_id->sequence = 1;
             $client_id->parent_menu = $client_id_n;
             $client_id->save();
 

@@ -1,14 +1,14 @@
 @extends('layouts.dt')
-@section('title', 'Client Groups')
-@section('widget-title', 'Manage Client Groups')
-@section('widget-desc', 'All Client Groups')
+@section('title', 'Contact Groups')
+@section('widget-title', 'Manage Contact Groups')
+@section('widget-desc', 'All Contact Groups')
 
 @section('button')
 
     <ul class="list-inline list-unstyled pull-right">
         <li>
             <a type="button" class="btn btn-primary pull-right header-btn " data-toggle="modal" data-target="#add-user-role">
-                <i class="fa fa-plus"></i> Add Group
+                <i class="fa fa-plus"></i> Create Contact Group
             </a>
         </li>
         {{--<li>--}}
@@ -51,7 +51,7 @@
                         &times;
                     </button>
                     <h4 class="modal-title">
-                        Add Recipient
+                       Create Contact Group
                     </h4>
                 </div>
                 <div class="modal-body no-padding">
