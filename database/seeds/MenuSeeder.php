@@ -170,7 +170,7 @@ class MenuSeeder extends Seeder
             $sms_m->save();
 
             ####### Broadcast module
-            $broadcast_route = Route::where('route_name', 'Broadcast Module')->first();
+            $broadcast_route = Route::where('route_name', 'Messages')->first();
             $broadcast = new Menu();
             $broadcast->route_id = $broadcast_route->id;
             $broadcast->sequence = 5;
@@ -178,7 +178,7 @@ class MenuSeeder extends Seeder
             $broadcast->save();
             $broadcast_id = $broadcast->id;
 
-            $broadcast_route1 = Route::where('route_name', 'Broadcasts')->first();
+            $broadcast_route1 = Route::where('route_name', 'Send Message')->first();
             $broadcast = new Menu();
             $broadcast->route_id = $broadcast_route1->id;
             $broadcast->sequence = 1;

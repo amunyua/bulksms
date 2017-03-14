@@ -1,5 +1,5 @@
 <h2 class="email-open-header">
-	Compose New Broadcast
+	Compose New Message
 	<!--<span class="label txt-color-white">DRAFT</span>-->
 	<!--<a href="javascript:void(0);" rel="tooltip" data-placement="left" data-original-title="Print" class="txt-color-darken pull-right"><i class="fa fa-print"></i></a>	-->
 </h2>
@@ -17,7 +17,7 @@
 					<select style="width:100%" class="form-control select2" id="cg" name="client_group" required>
 						<option value="">Choose Recipient type</option>
 						<option value="individuals">Individuals</option>
-						<option value="client-groups">Client Groups</option>
+						<option value="client-groups">Contact Group(s)</option>
 					</select>
 					{{--<em><a href="javascript:void(0);" class="show-next" rel="tooltip" data-placement="bottom" data-original-title="Carbon Copy">CC</a></em>--}}
 				</div>
@@ -30,10 +30,10 @@
 	<div class="inbox-info-bar no-padding" id="group-recipients" style="display: none">
 		<div class="row">
 			<div class="form-group">
-				<label class="control-label col-md-2"><strong>Client Group(s)</strong></label>
+				<label class="control-label col-md-2"><strong>Contact Group(s)</strong></label>
 				<div class="col-md-10">
 					<select multiple  class="select2 form-control" name="group_recipients[]" required>
-						<option value="All">Send to all</option>
+						{{--<option value="All">Send to all</option>--}}
 						@if(count($client_groups))
 							@foreach($client_groups as $client_group)
 								<option value="{{$client_group->id}}">{{$client_group->group_name}}</option>

@@ -360,12 +360,12 @@ class RouteSeeder extends Seeder
 
             ######### Broadcast module
             $broadcast = new Route();
-            $broadcast->route_name = 'Broadcast Module';
+            $broadcast->route_name = 'Messages';
             $broadcast->save();
             $broadcast_id = $broadcast->id;
 
             $broadcast = new Route();
-            $broadcast->route_name = 'Broadcasts';
+            $broadcast->route_name = 'Send Message';
             $broadcast->url = 'broadcasts';
             $broadcast->parent_route = $broadcast_id;
             $broadcast->save();

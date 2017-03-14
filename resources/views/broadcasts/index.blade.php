@@ -4,7 +4,7 @@
 @section('content')
     <div class="inbox-nav-bar no-content-padding">
 
-        <h1 class="page-title txt-color-blueDark hidden-tablet"><i class="fa fa-fw fa-inbox"></i> Broadcasts &nbsp;
+        <h1 class="page-title txt-color-blueDark hidden-tablet"><i class="fa fa-fw fa-inbox"></i> Messages &nbsp;
             {{--<span class="btn-group">--}}
 							{{--<a href="#" data-toggle="dropdown" class="btn btn-default btn-xs dropdown-toggle"><span class="caret single"></span></a>--}}
 							{{--<ul class="dropdown-menu">--}}
@@ -27,7 +27,7 @@
 
         <div class="btn-group hidden-desktop visible-tablet">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Broadcasts <i class="fa fa-caret-down"></i>
+                Messages <i class="fa fa-caret-down"></i>
             </button>
             <ul class="dropdown-menu pull-left">
                 {{--<li>--}}
@@ -57,7 +57,7 @@
 
         </div>
 
-        <a href="javascript:void(0);" id="compose-mail-mini" class="btn btn-primary hidden-desktop visible-tablet"> <strong><i class="fa fa-file fa-lg"></i></strong> Create new </a>
+        <a href="javascript:void(0);" id="compose-mail-mini" class="btn btn-primary hidden-desktop visible-tablet"> <strong><i class="fa fa-mail-forward fa-lg"></i></strong> Send Message </a>
         {{--<a href="javascript:void(0);" id="compose-mail" class="btn btn-primary btn-block"> <strong>Compose</strong> </a>--}}
 
         <div class="btn-group pull-right inbox-paging">
@@ -85,7 +85,7 @@
 
             <ul class="inbox-menu-lg">
                 <li class="active">
-                    <a class="inbox-load" href="javascript:void(0);"> Sent Broadcasts </a>
+                    <a class="inbox-load" href="javascript:void(0);"> Sent Messages </a>
                 </li>
                 {{--<li>--}}
                     {{--<a href="javascript:void(0);">Sent</a>--}}
